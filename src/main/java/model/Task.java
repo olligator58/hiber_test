@@ -1,7 +1,6 @@
 package model;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Date;
 
@@ -14,8 +13,7 @@ public class Task {
     private Employee employee;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    @GenericGenerator(name = "native", strategy = "native")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }

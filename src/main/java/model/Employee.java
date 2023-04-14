@@ -1,7 +1,9 @@
 package model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Cache;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name="employee")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Employee {
     private int id;
     private String name;
